@@ -1,0 +1,57 @@
+function verticalLine() {
+    const context;
+
+    context.lineWidth = 5;
+    context.strokeStyle = '#000000';
+
+    context.beginPath();
+    context.moveTo(248, 29);
+    context.lineTo(251, 274);
+    context.stroke();
+}
+
+function horizontaLine() {
+    const context;
+    context.lineWidth = 5;
+    context.strokeStyle = '#000000';
+    context.beginPath();
+
+    context.moveTo(122, 141);
+    context.lineTo(390, 137);
+    context.stroke();
+    context.closePath();
+}
+function rectangle() {
+    context.strokeStyle = '#000000';
+    context.strokeRect(114, 335, 353, 60);
+}
+
+describe('Automate Html canva studio', () => {
+    it('Should go to the URL', () => {
+        browser.url('http://www.htmlcanvasstudio.com/');
+    });
+
+    it('should click the Draw horizontal button', () => {
+        const lineButton = $('.button:nth-child(2)');
+        lineButton.click();
+        horizontaLine();
+
+    });
+    it('should click the Draw vertical button', () => {
+        const lineButton = $('.button:nth-child(2)');
+        lineButton.click();
+        verticalLine();
+
+    });
+    it('should click the rectangle button', () => {
+        const rectangleButton = $('.button:nth-child(3)');
+        rectangleButton.click();
+        rectangle();
+
+    });
+    it('should clicke the erasar button', () => {
+        const eraseButton = $('.button:nth-child(5)');
+        eraseButton.click();
+    });
+
+})
